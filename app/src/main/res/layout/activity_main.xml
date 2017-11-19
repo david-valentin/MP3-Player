@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity">
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/songList"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/currentSong" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/playButton"
+        android:src="@android:drawable/ic_media_play"
+        android:contentDescription="@string/PlayDesc"
+        android:onClick="playMusic"
+        android:layout_gravity="center"
+        android:layout_marginLeft="82dp"
+        android:layout_marginStart="82dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/pauseButton"
+        android:src="@android:drawable/ic_media_pause"
+        android:contentDescription="@string/pauseDesc"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/playButton"
+        android:clickable="false"
+        android:onClick="pauseMusic" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/stopButton"
+        android:src="@android:drawable/checkbox_off_background"
+        android:contentDescription="@string/stoPdesc"
+        android:layout_gravity="center"
+        android:onClick="stopMusic"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/pauseButton"
+        android:layout_alignTop="@+id/pauseButton" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/musicProgress"
+        android:layout_above="@+id/playButton"
+        android:layout_toLeftOf="@+id/MaxDurationText"
+        android:layout_toEndOf="@+id/CurrentProgressText"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/selectsong"
+        android:id="@+id/currentSong"
+        android:textAlignment="center"
+        android:layout_above="@+id/musicProgress"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:editable="false" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/Time"
+        android:id="@+id/CurrentProgressText"
+        android:layout_below="@+id/musicProgress"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/MaxTime"
+        android:id="@+id/MaxDurationText"
+        android:layout_alignBottom="@+id/CurrentProgressText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+</RelativeLayout>
